@@ -1,0 +1,84 @@
+ .landing-screen {
+          width: 2160px;
+          height: 1440px;
+          cursor: pointer;
+          overflow: hidden;
+        }
+
+        .landing-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 3rem;
+        }
+
+        .landing-logo {
+            width: 400px;
+            height: auto;
+            margin-top: 3%;
+            margin-left: 3%;
+        }
+
+        .landing-text {
+          margin-top: 8%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .landing-greeting {
+          font-size: 10rem;
+          font-weight: 600;
+          color: #0f1419;
+          letter-spacing: 0.02em;
+          margin: 0;
+          padding: 0;
+        }
+
+        .landing-subtext {
+          font-size: 3.5rem;
+          font-style: italic;
+          color: #4b5563;
+          font-weight: 400;
+        }
+
+        .landing-instruction {
+          margin-top: 10rem;
+        }
+
+        .landing-instruction p {
+          font-size: 5rem;
+          color: #0f1419;
+        }
+
+        .landing-languages {
+          display: flex;
+          gap: 4rem;
+          margin-top: 10rem;
+          justify-content: right;
+          margin-right: 5%;
+        }
+
+        .lang-btn {
+          width: 300px;
+          height: 170px;
+          background-color: #0f1419;
+          color: white;
+          border: none;
+          border-radius: 1rem;
+          font-size: 3rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          letter-spacing: 0.05em;
+        }
+
+        /* .lang-btn:hover {
+          background-color: #1a2536;
+          transform: scale(1.05);
+        }
+
+        .lang-btn:active {
+          transform: scale(0.98);
+        } */
