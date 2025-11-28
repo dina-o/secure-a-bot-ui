@@ -54,6 +54,38 @@
   height: 3rem;
 }
 
+.search-width {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5rem;
+}
+
+.lets-go {
+  align-self: center;
+  padding: 2rem 3rem 2rem 6rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+  background-color: #b8860b;
+  border-color: none;
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+.lets-go-container {
+  display: flex;
+  align-items: center;
+  color: white;
+  }
+
+  .lets-go-container svg {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 2rem;
+    position: absolute;
+  }
+
 .search-container {
   width: 100%;
   /* max-width: 2000px; */
@@ -209,3 +241,50 @@
     transform: translateY(-5px)
   }
 }
+
+/* Modal styles  */
+.modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+        }
+
+        .modal {
+          background-color: #e8e8f0;
+          border-radius: 2rem;
+          /* padding: 10rem 6rem; */
+          width: 50%;
+          height: 50%;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+          text-align: center;
+        }
+
+        .modal-close {
+          font-size: 2rem;
+          color: #07121e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .modal-text {
+          font-size: 6rem;
+          font-weight: 500;
+          color: #07121e;
+          letter-spacing: 0.02em;
+          margin-top: 10%;
+        }
+
+        .header-logo {
+          width: 35%;
+          height: auto;
+        }
+
+

@@ -28,13 +28,12 @@ export default function SelestApp() {
 
 
   return (
-    // THIS IS THE CONDITIONAL RENDER
     currentLocation ? (
       <LocationMap locationName={currentLocation} onBack={() => setCurrentLocation(null)} />
     ) : (
 
     <div className="app-container">
-      {/* Header */}
+
       <div className="header">
         <div className="header-left">
         <img src={selestLogo} alt="SELEST Logo" className="header-logo" />
@@ -42,17 +41,14 @@ export default function SelestApp() {
         <div className="header-time">{time}</div>
       </div>
 
-      {/* Main Content */}
       <div className="main-content">
-        {/* Title Section */}
+
         <div className="title-section">
           <div className="accent-bar"></div>
           <h1 className="main-title">Where do you want to go?</h1>
         </div>
 
-        {/* Navigation Grid */}
         <div className="nav-container">
-          {/* Location Buttons Row */}
           <div className="location-row">
             <button className="location-btn">
               <HelpCircle size={48} />

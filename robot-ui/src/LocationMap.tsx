@@ -1,5 +1,7 @@
-import { ArrowLeft, MapPin, Accessibility, CigaretteOff, Search  } from 'lucide-react';
+import { ArrowLeft, MapPin, Accessibility, CigaretteOff, Search, Navigation  } from 'lucide-react';
 import './LocationMap.css';
+import { useState } from 'react';
+import selestLogo from './assets/selest-logo.png';
 
 interface LocationMapProps {
   locationName: string;
@@ -7,6 +9,9 @@ interface LocationMapProps {
 }
 
 export default function LocationMap({onBack }: LocationMapProps) {
+
+    const [showFollowMe, setShowFollowMe] = useState(false);
+
   return (
     <div className="location-map-container">
       <div className="map-header">
@@ -27,7 +32,7 @@ export default function LocationMap({onBack }: LocationMapProps) {
         </div>
       </div>
 
-      {/* Search Bar */}
+    <div className='search-width'>
       <div className="search-container">
         <Search/>
         <input
@@ -37,6 +42,12 @@ export default function LocationMap({onBack }: LocationMapProps) {
         />
       </div>
 
+    <div className='lets-go-container'>
+      <Navigation className='navigation-icon'/>
+      <button className='lets-go' onClick={() => setShowFollowMe(true)}>&nbsp; Let's Go!</button>
+    </div>
+
+    </div>
       <div className="map-grid">
         <div className="map-room lobby">
           <span>Lobby</span>
@@ -69,8 +80,28 @@ export default function LocationMap({onBack }: LocationMapProps) {
 
       <button className="you-are-here">
         <div className="location-dot"> <MapPin/></div>
-        <span>You are here!</span>
+        <span>You are here</span>
       </button>
+      
+      {/* Follow me Modal */}
+      {showFollowMe && (
+        <div className="modal-overlay" onClick={() => setShowFollowMe(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <button className="modal-close" onClick={() => setShowFollowMe(false)}>
+                Back
+              </button>
+              
+                <img src={selestLogo} alt="SELEST Logo" className="header-logo" />
+             
+            </div>
+            <p className="modal-text">Follow me to your destination!</p>
+          </div>
+        </div>
+      )}
+
+
+
     </div>
   );
 }
