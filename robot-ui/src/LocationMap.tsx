@@ -1,6 +1,6 @@
 import { ArrowLeft, MapPin, Accessibility, CigaretteOff, Search, Navigation  } from 'lucide-react';
 import './LocationMap.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import selestLogo from './assets/selest-logo.png';
 
 interface LocationMapProps {
@@ -11,6 +11,19 @@ interface LocationMapProps {
 export default function LocationMap({onBack }: LocationMapProps) {
 
     const [showFollowMe, setShowFollowMe] = useState(false);
+    const [showSecondView, setShowSecondView] = useState(false);
+
+    useEffect(() => {
+        if (showFollowMe) {
+            setShowSecondView(false);
+            const timer = setTimeout(() => {
+            setShowSecondView(true);
+            setShowFollowMe(false);
+            }, 6000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [showFollowMe]);
 
   return (
     <div className="location-map-container">
@@ -96,6 +109,23 @@ export default function LocationMap({onBack }: LocationMapProps) {
              
             </div>
             <p className="modal-text">Follow me to your destination!</p>
+          </div>
+        </div>
+      )}
+
+      {showSecondView && (
+        <div className="modal-overlay" onClick={() => setShowFollowMe(false)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              
+                <img src={selestLogo} alt="SELEST Logo" className="header-logo" />
+             
+            </div>
+            <p className="modal-text-2">You have arrived safely to the</p>
+            <p className="destination-name">Restrooms</p>
+
+            <p className='arrived-msg'>Please confirm your arrival by clicking the button below to end your session</p>
+            <button className='arrived-btn'>Arrived</button>
           </div>
         </div>
       )}
