@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import selestLogo from './assets/selest-logo.png';
 import './LandingScreen.css';
-import { Language, getTranslation } from './translations';
+import { getTranslation } from './translations';
+import type { Language } from './translations';
 
 interface LandingScreenProps {
   onBegin: () => void;
