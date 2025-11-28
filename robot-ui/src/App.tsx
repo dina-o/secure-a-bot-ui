@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import selestLogo from './assets/selest-logo.png';
 import qrCodeImage from './assets/qrc.png';
+import LocationMap from './LocationMap';
 
 export default function SelestApp() {
   const [showQRModal, setShowQRModal] = useState(false);
@@ -23,8 +24,15 @@ export default function SelestApp() {
     return () => clearInterval(interval);
   }, []);
 
+  const [currentLocation, setCurrentLocation] = useState<string | null>(null);
+
 
   return (
+    // THIS IS THE CONDITIONAL RENDER
+    currentLocation ? (
+      <LocationMap locationName={currentLocation} onBack={() => setCurrentLocation(null)} />
+    ) : (
+
     <div className="app-container">
       {/* Header */}
       <div className="header">
@@ -51,7 +59,7 @@ export default function SelestApp() {
               <span className="location-btn-text">Front Desk</span>
             </button>
 
-            <button className="location-btn">
+            <button className="location-btn" onClick={() => setCurrentLocation('Restrooms')}>
               <Toilet size={48} />
               <span className="location-btn-text">Restrooms</span>
             </button>
@@ -106,5 +114,6 @@ export default function SelestApp() {
         </div>
       )}
     </div>
-  );
+  )
+);
 }
