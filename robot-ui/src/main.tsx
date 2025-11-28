@@ -7,8 +7,10 @@ import LandingScreen from './LandingScreen.tsx'
 function Root() {
   const [showApp, setShowApp] = useState(false);
 
+  const goBackToLanding = () => setShowApp(false);
+
   return showApp ? (
-    <App />
+    <App onFinish={goBackToLanding}/>
   ) : (
     <LandingScreen onBegin={() => setShowApp(true)} />
   );

@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import selestLogo from './assets/selest-logo.png';
 
 interface LocationMapProps {
-  locationName: string;
   onBack: () => void;
+  onArrived: () => void;
 }
 
-export default function LocationMap({onBack }: LocationMapProps) {
+export default function LocationMap({onBack, onArrived }: LocationMapProps) {
 
     const [showFollowMe, setShowFollowMe] = useState(false);
     const [showSecondView, setShowSecondView] = useState(false);
@@ -125,7 +125,7 @@ export default function LocationMap({onBack }: LocationMapProps) {
             <p className="destination-name">Restrooms</p>
 
             <p className='arrived-msg'>Please confirm your arrival by clicking the button below to end your session</p>
-            <button className='arrived-btn'>Arrived</button>
+            <button className='arrived-btn' onClick={onArrived}>Arrived</button>
           </div>
         </div>
       )}

@@ -5,7 +5,11 @@ import selestLogo from './assets/selest-logo.png';
 import qrCodeImage from './assets/qrc.png';
 import LocationMap from './LocationMap';
 
-export default function SelestApp() {
+interface SelestAppProps {
+  onFinish: () => void;
+}
+
+export default function SelestApp( {onFinish}: SelestAppProps) {
   const [showQRModal, setShowQRModal] = useState(false);
     const [time, setTime] = useState("");
 
@@ -29,7 +33,7 @@ export default function SelestApp() {
 
   return (
     currentLocation ? (
-      <LocationMap locationName={currentLocation} onBack={() => setCurrentLocation(null)} />
+      <LocationMap onBack={() => setCurrentLocation(null)} onArrived={onFinish} />
     ) : (
 
     <div className="app-container">
