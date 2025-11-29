@@ -108,7 +108,7 @@ export default function LocationMap({onBack, onArrived }: LocationMapProps) {
                 <img src={selestLogo} alt="SELEST Logo" className="header-logo" />
              
             </div>
-            <p className="modal-text">Follow me to your destination!</p>
+            <p className="modal-text-1">Follow me to your destination!</p>
           </div>
         </div>
       )}

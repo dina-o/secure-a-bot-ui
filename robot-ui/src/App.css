@@ -199,7 +199,6 @@
         .modal {
           background-color: #e8e8f0;
           border-radius: 2rem;
-          padding: 5rem;
           width: 40%;
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
           text-align: center;
@@ -234,5 +233,4 @@
           font-weight: 500;
           color: #07121e;
           letter-spacing: 0.02em;
-          margin-top: 2%;
         }
